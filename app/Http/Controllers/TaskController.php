@@ -83,9 +83,6 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        // Eager load the assignedUsers relationship
-        // $task->load('createdBy', 'updatedBy', 'assignedUser', 'project');
-
         return inertia('Task/Show', [
             'task' => new TaskResource($task),
         ]);
@@ -111,27 +108,6 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        // $data = $request->validated();
-        // $image = $data['image'] ?? null;
-        // $data['updated_by'] = Auth::id();
-        // if ($image) {
-        //     if ($task->image_path) {
-        //         Storage::disk('public')->deleteDirectory(dirname($task->image_path));
-        //     }
-        //     $data['image_path'] = $image->store('task/' . Str::random(), 'public');
-        // }
-
-        // // Update the task
-        // $task->update($data);
-
-        // // Sync the assigned users
-        // if (isset($data['assigned_user_id'])) {
-        //     $task->assignedUsers()->sync($data['assigned_user_id']);
-        // }
-
-        // return to_route('task.index')
-        //     ->with('success', "Task \"$task->name\" was updated");
-
         $data = $request->validated();
         $image = $data['image'] ?? null;
         $data['updated_by'] = Auth::id();

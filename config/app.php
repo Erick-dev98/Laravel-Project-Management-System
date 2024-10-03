@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'PROJECT MANAGEMENT SYSTEM'),
+    'name' => env('APP_NAME', 'TASK MANAGEMENT SYSTEM'),
 
     /*
     |--------------------------------------------------------------------------

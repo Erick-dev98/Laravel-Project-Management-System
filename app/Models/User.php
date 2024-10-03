@@ -10,30 +10,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    // use HasFactory, Notifiable;
-
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password',
-    //     'email_verified_at'
-    // ];
-
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
-
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    //     'password' => 'hashed',
-    // ];
-
-    // public function tasks()
-    // {
-    //     return $this->belongsToMany(Task::class, 'task_user');
-    // }
-
 
     use HasFactory, Notifiable;
 
@@ -46,7 +22,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'email_verified_at'
+        'email_verified_at',
+        'role'
     ];
 
     /**
@@ -64,11 +41,8 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    protected $casts = [  
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed', // Password hashing in Laravel 10+
+    ];
 }

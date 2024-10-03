@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('task_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->enum('role', ['ADMIN', 'USER'])->default('USER'); // Add role column with default value USER
             $table->timestamps();
         });
     }

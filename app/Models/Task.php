@@ -7,43 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    // use HasFactory;
-
-    // protected $fillable = [
-    //     'name',
-    //     'description',
-    //     'image_path',
-    //     'status',
-    //     'priority',
-    //     'due_date',
-    //     'created_by',
-    //     'updated_by',
-    //     'project_id',
-    // ];
-
-    // public function project()
-    // {
-    //     return $this->belongsTo(Project::class);
-    // }
-
-    // // Define the many-to-many relationship with users
-    // public function users()
-    // {
-    //     return $this->belongsToMany(User::class, 'task_user', 'task_id', 'user_id')
-    //                 ->withTimestamps();
-    // }
-
-    // public function createdBy()
-    // {
-    //     return $this->belongsTo(User::class, 'created_by');
-    // }
-
-    // public function updatedBy()
-    // {
-    //     return $this->belongsTo(User::class, 'updated_by');
-    // }
-
-
     use HasFactory;
 
     protected $fillable = [

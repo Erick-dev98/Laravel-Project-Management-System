@@ -16,16 +16,18 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'John',
-            'email' => 'john@example.com',
-            'password' => bcrypt('123.321A'),
-            'email_verified_at' =>time()
+        // Create an admin user using the factory's admin state
+        User::factory()->admin()->create([
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => bcrypt('admin.123'),
+            'email_verified_at' => now(),
+            // 'role' is already set to 'ADMIN' by the admin state
         ]);
 
         Project::factory()
-        ->count(30)
-        ->hasTasks(30)
-        ->create();
+            ->count(30)
+            ->hasTasks(30)
+            ->create();
     }
 }

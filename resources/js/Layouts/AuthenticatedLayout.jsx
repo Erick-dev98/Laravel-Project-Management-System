@@ -15,7 +15,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                     <div className="flex items-center justify-center h-16">
                         {/* Project Name */}
                         <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">
-                            PROJECT MANAGEMENT SYSTEM
+                            TASK MANAGEMENT SYSTEM
                         </div>
                     </div>
                     <div className="flex justify-between h-16">
@@ -45,10 +45,6 @@ export default function AuthenticatedLayout({ user, header, children }) {
 
                                 <NavLink href={route('task.myTasks')} active={route().current('task.myTasks')}>
                                     My Tasks
-                                </NavLink>
-
-                                <NavLink>
-                                    Reports
                                 </NavLink>
                             </div>
                         </div>
